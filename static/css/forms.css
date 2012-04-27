@@ -1,0 +1,954 @@
+/*
+  style.css
+
+  Version: $Revision: 4461 $
+ 
+ 
+  Date: $Date: 2009-10-20 02:42:11 +0000 (Tue, 20 Oct 2009) $
+ 
+  Copyright (c) 2002-2005, Hewlett-Packard Company and Massachusetts
+  Institute of Technology.  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+ 
+  - Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+ 
+  - Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+ 
+  - Neither the name of the Hewlett-Packard Company nor the name of the
+  Massachusetts Institute of Technology nor the names of their
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+ 
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+  OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+  TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.
+*/
+body {
+	font-family: "verdana", Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        color: #000000;
+        margin: 0px;
+        margin-top: 0px;
+        margin-left: 0px;
+        background-image:url("../images/bg.gif");
+        background-repeat:repeat-x;
+        background-position:0 0;
+        height:100%;
+
+
+}
+
+img {
+border:0;
+}
+
+
+ul li a, span.bold a {
+	/*color: #31317C;*/
+	color: #2f585a;
+	text-decoration: none;
+	font-weight: bolder;
+}
+fieldset {
+        border: 0px;
+}
+
+a:link {
+      /* color: #31317C;*/
+	color: #2f585a;
+}
+
+a:visited {
+color:#669999;
+}
+
+div#ds-main {
+        position: relative;
+        margin-top: 5px;
+        width: 980px;
+        color: inherit;
+        background-color: white;
+        margin-left: auto;
+	-webkit-border-radius-topright: 13px;    /* for Safari */
+	-moz-border-radius-topright: 13px;       /* for Firefox */
+	border: 1px solid #CECECE;
+        margin-right: auto;
+        text-align: left;
+        padding-top: 15px;
+}
+
+
+input#title, input#title_alternative, input#publisher, input#journal {
+width: 35em;
+}
+
+input#year, input#chapter, input#firstPage, input#lastPage, input#volume, input#issue {
+width: 8em;
+}
+
+div#ds-header {
+        width: 100%;
+	height: 120px;
+        /*border: 3px solid rgb(240, 240, 210);*/
+        padding: 0px;
+}
+
+div#ds-header a {
+        text-decoration: none;
+	font-weight: bolder;
+}
+
+div#ds-header  a span#ds-header-logo {
+        width: 100%;
+        height: 120px;
+        float: right;
+        background-image: url("../images/logo.gif");
+        background-repeat: no-repeat;
+        /*background-position: 85% 40%;
+	background-position: 0 15px;*/
+	background-position: -20px 15px;
+        color: inherit;
+        background-color: white;
+}
+
+div#ds-header h1,div#ds-header h2 {
+        display: none;
+}
+
+#errmsg {
+	
+	font-size: 1.2em;
+	color: #880000;
+	font-weight: bolder;
+}
+
+#form {
+        
+        
+               
+        color: inherit;
+        background-color: rgb(255, 255, 253);
+        /*border: 2px solid rgb(240, 240, 210);*/
+        margin:0 0 0  -4em;
+        padding-bottom: 30px;
+        padding-left: 0px;
+      
+}
+
+div#ds-form-body {
+        
+
+        
+        color: inherit;
+        background-color: rgb(255, 255, 253);
+        /*border: 2px solid rgb(240, 240, 210);*/
+        
+        padding-bottom: 30px;
+             padding-right: 25px;
+}
+
+ul li {
+	list-style: none;
+	color: #4c4e65;
+	padding: 0 0 0 25px;
+}
+
+div#ds-form-body h1, h2, h3 {
+	color: #2f585a;
+	font-weight: bolder;
+	padding-left: 1em;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The composite field voodoo */
+span.ds-composite-field {
+        display: table-row;
+        padding: 2px;
+}
+
+*.ds-composite-field.ds-composite-component {
+        display: table-cell;
+        text-align: left;
+        width: auto;
+        padding-right: 10px;
+}
+
+*.ds-composite-field input,*.ds-composite-field textarea,*.ds-composite-field select {
+        margin-right: 5px;
+        margin-bottom: -2px;
+}
+
+span.composite-help {
+        display: block;
+        font-size: 80%;
+        color: blue;
+        background-color: inherit;
+        text-align: left;
+}
+
+/* Checkboxes and Radio buttons */
+fieldset.ds-checkbox-field,fieldset.ds-radio-field {
+        border: none;
+        margin: 0;
+        padding: 0;
+}
+
+fieldset.ds-checkbox-field legend,fieldset.ds-radio-field legend {
+        display: none;
+}
+
+fieldset.ds-checkbox-field label,fieldset.ds-radio-field label {
+        display: block;
+}
+
+/* The form list and and its components voodoo */ /* Top-level stuff */
+fieldset.ds-form-list {
+        border: 2px solid rgb(240, 240, 210);
+        padding: 0;
+        color: inherit;
+        background-color: rgb(255, 255, 245);
+        margin-left: 0;
+        margin-right: 0;
+}
+
+fieldset.ds-form-list.thick {
+        border-top: 22px solid rgb(240, 240, 210);
+}
+
+fieldset.ds-form-list ol {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+}
+
+fieldset.ds-form-list legend {
+        color: #2f585a;
+        background-color: inherit;
+        font-size: 115%;
+        font-weight: bolder;
+        margin-left: 10px;
+}
+
+fieldset.thick legend {
+        color: #2f585a;
+        background-color: rgb(255, 255, 245);
+        border-top: 2px solid rgb(240, 240, 210);
+        padding-left: 10px;
+        padding-right: 30px;
+}
+
+
+form.ds-interactive-div li.odd {
+        color: inherit;
+        background-color: rgb(252, 252, 230);
+}
+
+form.ds-interactive-div li.even {
+        color: inherit;
+        background-color: rgb(255, 255, 245);
+}
+
+form.ds-interactive-div li.ds-form-item.last {
+        border-top: 2px solid #cecece;
+        color: inherit;
+        background-color: rgb(255,255,224);
+}
+
+form.ds-interactive-div.primary {
+        float: left;
+        clear: both;
+        padding: 0px;
+        margin-bottom: 10px;
+	width: 100%;
+}
+
+form.ds-interactive-div {
+	/*border: 1px solid #cecece;*/
+	background-color: #fffcf8; 
+}
+
+p {
+    padding: 0;
+    margin: 6px;
+}
+
+fieldset ol {
+        float: left;
+        clear: both;
+}
+
+li.ds-form-item {
+        float: left;
+        clear: both;
+}
+
+div.ds-form-content {
+        float: left;
+        clear: right;
+        display: block;
+        padding: 7px;
+                width: 400px;
+}
+
+span.ds-form-label,label.ds-form-label {
+        display: block;
+        float: left;
+        clear: left;
+        padding: 5px 20px 5px 10px;
+        width: 150px;
+        font-weight: bold;
+        vertical-align: middle;
+        overflow: hidden;
+}
+
+label.ds-composite-component {
+        display: block;
+        float: left;
+        padding: 0px 5px 0 0px;
+        font-size: 80%;
+        color: blue;
+        background-color: inherit;
+        text-align: left;
+}
+
+span.error {
+        display: block;
+        font-size: 85%;
+        color: red;
+        background-color: inherit;
+        margin: 0;
+}
+
+span.field-help {
+        display: block;
+        margin-left: 5px;
+        font-size: 80%;
+        color: gray;
+        background-color: inherit;
+}
+
+input.error,textarea.error,select.error {
+        color: inherit;
+        background-color: rgb(255, 245, 245);
+        border-color: red;
+}
+
+span.composite-help {
+        display: block;
+        font-size: 80%;
+        color: gray;
+        background-color: inherit;
+        text-align: left;
+}
+
+div.spacer {
+        margin: 0;
+        padding: 0;
+        line-height: 0px;
+        clear: both;
+}
+
+div#ds-options {
+        position: relative;
+        float: left;
+        width: 190px;
+        color: inherit;
+        background-color:#dddee6; 
+        margin: 0;
+        padding: 20px 0 3em 0;
+        font-size: 95%;
+	border-right: 1px #cecece solid;
+}
+
+
+
+div.ds-option-set {
+        padding: 0px 5px 0px 2px;
+        width: 175px;
+        margin: 2px 2px 5px 4px;
+        color: inherit;
+        background-color: #dddee6;
+       /* border: 2px solid rgb(240, 240, 210);*/
+}
+
+div#ds-search-option input {
+        font-size: 90%;
+}
+
+div#ds-search-option input.ds-text-field {
+        /*width: 80%;*/
+        margin: 0;
+        margin-left: -15px;
+        padding: 0;
+        position: relative;
+        top: -1px;
+        left: 8px;
+}
+
+div#ds-search-option input.ds-button-field {
+        width: auto;
+        height: 20px;
+        margin: 0px;
+        padding-left: 2px;
+        padding-right: 2px;
+        position: relative;
+        top: -1px;
+        left: 10px;
+}
+
+div#ds-search-option a {
+    position: relative;
+    top: -4px;
+    left: 4px;
+        margin: 0;
+        padding: 0;
+    color: #4c4e65;
+    font-weight: normal;
+}
+
+
+
+form#ds-search-form {
+        font-size: 90%;
+}
+
+div#ds-options h3 {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        padding: 0px 0px 0px 0px;
+
+	color: #fff;
+
+	background-color: #880000;
+
+	font-weight: bold;
+}
+
+div#ds-options h4 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        /*color: rgb(210, 100, 0);*/
+	color: #880000;
+	font-size: 0.95em;
+        background-color: inherit;
+}
+
+div#ds-options ul {
+        margin: 0px 0px 6px 0px;
+        padding: 0px;
+}
+
+div#ds-options li {
+        margin-left: 3px;
+        padding: 0px;
+        color: rgb(100, 100, 50);
+        background-color: inherit;
+}
+
+div#ds-options ul li a {
+font-size: 0.9em;
+font-weight: normal;
+color: #4c4e65;
+}
+
+.ds-option-set-head {
+	font-size: 0.95em;
+	width: 190px;
+}
+input.ds-password-field {
+        margin-right: 5px;
+}
+
+div#ds-footer {
+        position: relative;
+        /*margin-top: 10px;
+        margin-bottom: 20px;*/
+        height: 80px;
+        float: right;
+        width: 100%;
+        border-top: 2px solid #dddee6;
+}
+
+div.clear {
+	clear: both;
+}
+span#ds-footer-logo {
+        float: left;
+        clear: both;
+        height: 30px;
+        width: 300px;
+        background-image: url("../images/di_logo.jpg");
+        background-repeat: no-repeat;
+        background-position: 0% 30%;
+        color: inherit;
+        background-color: white;
+}
+
+div#ds-footer p {
+        width: 450px;
+        position: absolute;
+        right: 0px;
+        text-align: right;
+        font-size: smaller;
+}
+
+div#ds-footer-links {
+        position: absolute;
+        top: 8px;
+        left: 230px;
+        padding-right: 5px;
+        text-align: left;
+        font-size: smaller;
+}
+
+div#ds-footer-links a {
+	color: #2f585a;
+}
+
+div#ds-footer a#ds-logo-link {
+        text-decoration: none;
+}
+
+div.notice {
+        background-color: rgb(255, 255, 240);
+        border: 1px solid rgb(240, 240, 210);
+        padding: 6px;
+        text-align: center;
+        margin: 10px 30px 10px 30px;
+}
+
+div.notice.success p {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        color: rgb(80, 183, 40);
+        text-align: center;
+}
+
+div.notice.failure p {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        color: rgb(213, 80, 40);
+        text-align: center;
+}
+
+h1.ds-div-head,h2.ds-div-head,h3.ds-div-head {
+        clear: both;
+}
+
+/* License text display during submission */
+div.license-text {
+        border: 1px solid #666;
+        background-color: #EEE;
+        padding: 20px;
+        margin: 20px;
+        margin-top: 5px;
+        font-family: monospace;
+        font-size: 125%;
+}
+
+div#NoticeTransformer_div_general-message h1.ds-div-head {
+    position: absolute;
+    top: 11px;
+    left: 42px;
+    margin: 0;
+    padding: 0 5px;
+    font-size: small;
+}
+
+p.hidden {
+    display: none;
+}
+
+h1.ds-div-head, h2.ds-div-head, h3.ds-div-head {
+    clear:both;
+}
+
+
+span.fade {
+    color: gray;
+    font-size: 90%;
+}
+
+span.fade a {
+    color: gray;
+    text-decoration: none;
+}
+
+span.fade a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+span.warn {
+    color: red;
+    font-weight: bolder;
+}
+
+/* System-wide alerts */
+div#ds-system-wide-alert {
+    background-color: rgb(255, 255, 240);
+    border: 1px solid rgb(240, 240, 210);
+    padding: 6px;
+        margin: 10px 30px 10px 30px;
+    color: rgb(213, 80, 40);
+}
+
+
+/* admin tabs */
+form.administrative{
+  border: 1px solid rgb(240, 240, 210);
+  border-top: 0px;
+  width: inherit;
+}
+
+form.administrative fieldset{
+  margin: 7px;
+  width: auto;
+}
+form.administrative h3{
+  margin: 7px;
+}
+form.administrative table{
+  margin: 7px;
+  width: auto;
+}
+
+
+form#administrative_item_FindItemForm_div_find-item{
+  border: 0px;
+  margin-left: 0px;
+}
+
+ul.horizontal
+{
+font-weight: bold;
+list-style-type: none;
+padding: 0px;
+padding-left: 0px;
+padding-bottom: 24px;
+border-bottom: 1px solid rgb(240, 240, 210);
+border-left: 1px solid white;
+border-right: 1px solid white;
+margin: 0px;
+margin-left: -1px;
+margin-right: -1px;
+width: inherit;
+}
+
+ul.horizontal li
+{
+float: left;
+height: 21px;
+background-color: rgb(252, 252, 232);
+margin: 2px 2px 0px 2px;
+border: 1px solid rgb(240, 240, 210);
+}
+
+
+ul.horizontal a
+{
+float: left;
+display: block;
+text-decoration: none;
+padding: 4px;
+}
+
+ul.horizontal a:hover { background: white; text-decoration: underline;}
+
+ul.horizontal li span.bold a
+{
+border-bottom: 1px solid white;
+background-color: white;
+}
+
+ul.horizontal li span.bold a { color: black; }
+
+
+/** Additions for Authority Control elements **/
+/* for scriptaculous autocomplete */
+div.autocomplete {
+  position:absolute;
+  width:250px;
+  background-color:white;
+  border:1px solid #888;
+  margin:0;
+  padding:0;
+}
+div.autocomplete ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+div.autocomplete ul li.selected { background-color: #ffb;}
+div.autocomplete ul li {
+  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:2px;
+/*  height:32px; */
+  cursor:pointer;
+}
+div.autocomplete ul li span.value { display:none; }
+
+/* this magic gets the 16x16 icon to show up.. setting height/width didn't
+   do it, but adding padding actually made it show up. */
+img.ds-authority-confidence
+{ width: 16px; height: 16px; margin: 0px 2px; padding: 0px; vertical-align: bottom;}
+
+img.ds-authority-confidence.cf-unset
+  { background: transparent url(../images/confidence/bug.png); }
+img.ds-authority-confidence.cf-novalue
+  /* { background: transparent } */
+  { background: transparent url(../images/confidence/3-circleslash.gif); }
+img.ds-authority-confidence.cf-rejected,
+img.ds-authority-confidence.cf-failed
+  { background: transparent url(../images/confidence/2-errortriangle.gif); }
+img.ds-authority-confidence.cf-notfound
+  { background: transparent url(../images/confidence/3-thumb2.gif); }
+img.ds-authority-confidence.cf-ambiguous
+  { background: transparent url(../images/confidence/4-question.gif); }
+img.ds-authority-confidence.cf-uncertain
+  { background: transparent url(../images/confidence/5-pinion.gif); }
+img.ds-authority-confidence.cf-accepted
+  { background: transparent url(../images/confidence/6-thumb2.gif); }
+
+/* hide authority-value inputs in forms */
+input.ds-authority-value { display:none; }
+/** XXX Change to this to get the authority value to show up for debugging:
+ input.ds-authority-value { display:inline; }
+**/
+
+/* ..except, show authority-value inputs in on the Item EditMetadata page */
+input.ds-authority-value.ds-authority-visible { display: inline; }
+
+/* for lock button */
+input.ds-authority-lock
+  { vertical-align: bottom; height: 24px; width:
+    24px; background-repeat: no-repeat; background-color: transparent; }
+input.ds-authority-lock.is-locked
+  { background-image: url(../images/lock24.png); }
+input.ds-authority-lock.is-unlocked
+  { background-image: url(../images/unlock24.png); }
+
+
+/* Example of authority display: this makes authors with an authority
+   value show up as red in the item summary view: */
+span.ds-dc_contributor_author-authority { color: #982521; }
+
+/********* adaptions ************/
+
+select, input {
+
+
+border: 1px solid #cecece;
+
+font-size: 0.8em;
+
+}
+
+#ds-search-form input.ds-text-field {
+
+font-size: 1.2em;
+width: 80%;
+}
+
+div.gs-link {
+width: 70%;
+}
+.gs-link a {
+color: #2f585a;
+font-size: 0.8em;
+}
+
+#aspect_artifactbrowser_ItemViewer_div_item-view
+{
+font-size: 0.9em;
+}
+
+#export {
+	text-align: right;
+}
+
+h2.ds-div-head {
+   color: #800000;
+   border-bottom: 1px solid #cecece;
+}
+
+.ds-artifact-item {
+	padding:0;
+}
+
+.ds-artifact-item a{
+	color: #4c4e65;
+}
+
+h3.ds-head {
+	display:inline;
+	font-size: 1em;
+}
+
+img.sponsors {
+	padding: 1em 0 0 0;
+}
+
+#aspect_artifactbrowser_ConfigurableBrowse_list_jump-list li {
+	padding: 0px;
+}
+
+div#aspect_artifactbrowser_ConfigurableBrowse_div_browse-by-author-results {
+}
+
+#aspect_artifactbrowser_ConfigurableBrowse_table_browse-by-author-results tbody tr td, #aspect_artifactbrowser_ConfigurableBrowse_table_browse-by-author-results tbody tr th {
+border:none;
+background-color: white;
+}
+
+form p.ds-paragraph {
+text-align: center;
+}
+
+#front-images {
+padding: 1.5em 0 0 0;
+color: #880000;
+text-align: center;
+}
+
+#front-images a  {
+padding: 0 1.5em 1em 0;
+color: #2f585a;
+/*color: #880000;*/
+text-decoration: none;
+font-weight: bolder;
+font-size: 0.9em;
+white-space:nowrap;
+}
+
+#front-images a img{
+width: 105px;
+vertical-align: middle;
+padding-top: 0.5em;
+}
+
+img.logo {
+width: 120px;
+padding-left: 0.3em;
+padding-right: 0.5em;
+/*position: absolute;*/
+top: 15px;
+margin-right: 26%;
+}
+
+
+#front-images.img {
+width: 150px;
+padding-left: 0.3em;
+padding-right: 0.5em;
+}
+
+a.deposit {
+border: 1px solid #CECECE;
+background-color: #e0dfde;
+color: #000;
+text-decoration: none;
+padding: 0 2px;
+margin-left: 35%;
+font-size: 0.7em;
+}
+
+#ds-options a img {
+margin-left: 8px;
+}
+
+.serie {
+color: #2f585a;
+font-size: 0.9em;
+}
+
+.purl {
+position:relative;
+top:-10px;
+border: 1px solid #2f585a;
+padding: 0 0 0 5px;
+}
+
+#purl {
+color: #2f585a;
+padding: 0 0 0 5px;
+}
+
+span.composite-help, span.field-help {
+color: #0000ff;
+
+}
+
+.ds-interpreted-field {
+/*color: #2f5851;*/
+color: #880000;
+font-weight: bold;
+}
+
+
+label.ds-form-label {
+width: 11em;
+}
+#aspect_submission_StepTransformer_field_dc_identifier_citation, #aspect_submission_StepTransformer_field_dc_title, #aspect_submission_StepTransformer_field_dc_title_alternative, #aspect_submission_StepTransformer_field_dc_publisher {
+width: 32em;
+}
+
+#aspect_submission_StepTransformer_field_dc_contributor_author_last, #aspect_submission_StepTransformer_field_dc_contributor_author_first, #aspect_submission_StepTransformer_field_dc_contributor_editor_first, #aspect_submission_StepTransformer_field_dc_contributor_editor_last {
+width: 20em;
+}
+
+#aspect_submission_StepTransformer_field_dc_subject_value, #aspect_submission_StepTransformer_field_dc_subject_gokverbal {
+width: 30em;
+}
+
+#aspect_submission_StepTransformer_field_dc_description_abstract, #aspect_submission_StepTransformer_field_dc_description_sponsorship,
+#aspect_submission_StepTransformer_field_dc_description_notes, #aspect_submission_StepTransformer_field_dc_rights_holder {
+width: 30em;
+}
+
+#aspect_submission_StepTransformer_div_submit-describe select {
+font-size: 1em;
+}
+

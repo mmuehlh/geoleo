@@ -1,0 +1,656 @@
+
+<div id="file.help" n="news" rend="primary">
+<head>Hilfe</head>
+
+
+
+<h1><a name="contents">Hilfe und Infos</a></h1>
+
+<h2>Inhaltsverzeichnis:</h2>
+
+<div id="hilfLinks">
+
+        <ul>
+
+                <li><a href="#search">Suche</a></li>
+
+                <li><a href="#advanced">Erweiterte Suche</a></li>
+		<li><a href="#register">Registrierungsprozess</a></li>
+
+                <li><a href="#submit1">Veröffentlichungsprozess</a></li>
+                <li><a href="#register">Unvollendete Veröffentlichungsprozesse</a></li>
+		<li><a href="#fileformat">Dateiformat der Publikationen</a></li>
+
+                <li><a href="#profil">Benutzerprofil</a></li>
+
+                <li><a href="#interfaces">Schnittstellen</a></li>
+
+                <li><a href="#handles">Wer darf auf GEO-LEOe-docs veröffentlichen?</a></li>
+
+                <li><a href="#advantage">Welche Vorteile hat das Veröffentlichen auf GEO-LEOe-docs?</a></li>
+
+                <li><a href="#userrights">Was darf der Nutzer mit den Dokumenten auf GEO-LEOe-docs tun?</a></li>
+
+                <li><a href="#depositlicense">Welche Rechte übertragen Autoren GEO-LEOe-docs bei der Veröffentlichung?</a></li>
+
+                <li><a href="#delete">Darf ein Autor seine bereits veröffentlichte Publikation verändern oder löschen?</a></li>
+
+
+
+                
+
+ </ul>
+
+</div>
+
+
+
+ <div>
+
+        GEO-LEOe-docs stellt fachspezifische digitale Materialien aus den Themenbereichen
+
+	<ul>
+
+		<li>Astronomie, Astrophysik, Weltraumforschung</li>
+
+		<li>Geographie</li>
+
+		<li>Geologische Wissenschaften</li>
+
+		<li>Geophysik</li>
+
+		<li>Montanwissenschaften</li>
+
+		<li>Umweltwissenschaften</li>
+
+	</ul>
+
+	frei zur Verfügung.
+
+ </div>
+
+
+
+<p>
+
+        Für Ihre Dokumentenrecherche stehen Ihnen die Funktionen "Suche" und "Browsen" zur Verfügung.
+
+
+
+</p>
+
+
+
+
+
+
+
+<h3>Suche</h3>
+
+<div>
+
+<p><b>
+
+        1. Suche im gesamten GEO-LEOe-docs</b>
+
+</p>
+
+
+
+<p>
+
+      Die im linken oberen Seitenbereich abgebildete Suchmaske ermöglicht Ihnen die Suche im Gesamtbestand von GEO-LEOe-docs. Durchsucht werden Volltexte und alle Felder, die die Dokumente beschreiben. Befinden Sie sich in der Sammlung eines Themenbereiches, wird zusätzlich die Option angeboten:  Suche "Im ganzen e-docs" oder Suche "In dieser Sammlung". Die Suche im Bereich "Hilfe und Info" ist über die Suchfunktion (STRG F) des Browsers möglich.
+
+ 
+
+</p>
+
+<span class="center">
+
+        <img src="static/images/searchtop.png" alt="Einfache Suche" />
+
+</span>
+
+<p><b>
+
+        2. Suche in bestimmten Bereichen und Sammlungen</b>
+
+</p>
+
+<p>
+
+        Suchen Sie nach Dokumenten einer Sammlung, eines bestimmten Bereichs, so wählen Sie bitte die Suchfunktion der jeweiligen Startseite oder die Option "Erweiterte Suche". Ebenso wird ein Auflisten nach >> Erscheinungsdatum >> Autoren >> Kategorien angeboten.
+
+</p>
+
+<p><b>
+
+        3. Besonderheiten bei der Suche</b>
+
+</p>
+
+
+
+<p>
+
+        <span class="bold">Mehrere Suchbegriffe</span> werden standardmäßig mit UND verknüpft. (z.B.: <tt>sediment carbon</tt> liefert alle Dokumente, in denen <tt>sediment UND carbon</tt> vorkommen).
+
+
+
+
+
+	<span class="bold">ODER</span> ermöglicht die Suche nach Dokumenten, die entweder einen oder mehrere der gewünschten Suchbegriffe enthalten (z.B.: <tt>sediment ODER carbon</tt>).
+
+
+
+       
+
+</p>
+
+
+
+<p>
+
+       <span class="bold">Ausschluss von Suchbegriffen</span>
+
+        Möchten Sie Begriffe explizit aus der Suche ausschließen, so stellen Sie ihnen ein Minuszeichen (-) voran (z.B.: <tt>sediment -carbon</tt>).
+
+ 
+
+</p>
+
+
+
+<p>
+
+        <span class="bold">Runde Klammern</span> gruppieren Suchbegriffe (z.B.: <tt>(sediment ODER carbon)</tt> UND <tt>(isotope ODER dissolution)</tt>).
+
+</p>
+
+<p>
+
+        <span class="bold">Phrasensuche</span>
+
+        Benutzen Sie Anführungszeichen, um eine gesuchte Phrase zu kennzeichnen. (z.B. <tt>"angewandte Linguistik"</tt>)
+
+</p>
+
+
+
+<p>
+
+        <span class="bold">Umlaute</span> <br />
+
+
+
+</p>
+
+
+
+
+
+<p>
+
+        <span class="bold">Trunkierung</span>
+
+
+
+        Benutzen Sie den Asterisk (*), wenn Sie Ihren Suchbegriff trunkieren möchten. (z.B.: <tt>Psych*</tt>)
+
+</p>
+
+
+
+<p>
+
+        <span class="bold">Phrasensuche</span>
+
+        Benutzen Sie Anführungszeichen, um eine gesuchte Phrase zu kennzeichnen. (z.B. <tt>"angewandte Linguistik"</tt>)
+
+</p>
+
+</div>
+
+
+
+
+
+<h3>Erweiterte Suche</h3>
+
+
+
+
+
+<div>
+
+        Die erweiterte Suche ermöglicht es Ihnen, Trefferlisten mit Hilfe von verschiedenen Filter einschränken. 
+
+
+
+
+
+
+
+</div>
+
+
+
+<h3>Veröffentlichungsprozess</h3>
+
+
+
+
+
+<div>
+
+Das Publizieren auf GEO-LEOe-docs setzt voraus, dass Sie sich mit Ihrer E-Mail-Adresse und Ihrem Passwort auf dem Server authentifizieren. Falls Sie noch kein Benutzerkonto besitzen, registrieren Sie sich bitte zuerst!<br />
+
+Navigieren Sie über "Bereiche &amp; Sammlungen" zu diejenige Sammlung, in der Sie Ihre Publikation veröffentlichen wollen und klicken Sie dort auf "Ein Dokument in dieser Sammlung veröffentlichen". (Diese Option steht nur für angemeldete Nutzer zur Verfügung.)<br />
+
+
+
+        Damit startet der Veröffentlichungsprozess, durch den Sie in 5 Schritten geführt werden: 
+
+	
+
+		
+
+			<ol>
+
+				<li>
+
+				<ul>
+
+					<li>Einleitende Fragen:  Weitere Titel: Das Dokument hat mehrere Titel z. B.: eine Übersetzung</li>
+
+					<li>Bereits veröffentlicht:Das Dokument wurde bereits veröffentlicht oder öffentlich zugänglich gemacht</li>
+
+				</ul>
+
+				Trifft eine Aussage auf Ihre Publikation zu, setzen Sie bitte das entsprechnde Häckchen! Klicken Sie auf "weiter". 
+
+ 				</li>
+
+				<li>Metadata Import:
+
+				<br />
+
+				Falls Ihre Publikation bereits veröffentlicht worden ist und über einen DOI oder eine PPN (Idenitifikator des Gemeinsamen Bibliotheksverbunds) verfügt, so können Sie hier den entsprechenden Identifikator eintragen. Beim Klick auf "Weiter" werden die Beschreibunsdaten Ihrer Publikation automatisch zu importiert und ins Formular des nächsten Schrittes ("Bescheribung") übernomme. <br />
+
+				Ist kein DOI oder PPN vorhanden, lassen Sie bitte die beider Felder einfach leer und gehen Sie weiter!
+
+				
+
+				</li>
+
+				<li>Beschreiben:
+
+				Hier hier erscheinende Formular sammelt Daten, die Ihre Publikation beschreiben (Titel, Autor, Zusammenfassung usw.).
+
+				 
+
+				Füllen Sie bitte die Felder möglichst vollständig aus! Pflichtfelder sind mit einem "*" gekennzeichnet. Sie können mit "weiter" erst dann zum nächsten Schritt übergehen, wenn alle Pflichtfelder ausgefüllt sind.<br />
+
+				Wenn Sie im vorherigen Schritt einen Identifikator angegeben haben, werden hier einige importierten Daten bereits eingetragen sein. In den meisten Fällen sind es jedoch nicht alle Pflichtfelder. Bitte ergänzen Sie die fehlenden Felder und korrigieren Sie eventuelle falsche Angaben!
+
+				Inahlte von einmaligen Feldern können Sie direkt im betreffenden Feld korriegieren.<br />Wollen Sie Angaben von Mehrfachfeldern korrigieren (durch den "Add"-Knopf eingetragen), löschen Sie zuerst den falschen Inhalt (Häckchen neben dem betreffenden Eintrag setzen und auf "remove selected" klicken) und füllen Sie das Feld neu aus. 
+
+				</li>
+
+				<li>Hochladen:<br />
+
+				Nun soll das Dokument bzw. Dokumente in PDF-Format hochgeladen werden. Falls Ihre Publikation aus mehreren Dokumenten besteht, haben Sie die Möglichkeit, eine Beschreibung der einzelnen Teile anzugeben. Z.B. Haupttext, Graphiken, statistische Daten etc. <br />
+
+				oder Kapitel 1-5, Kapitel 6-10 etc.<br />
+
+				Informationen zum Dateiformat</li>
+
+				<li>Lizenz:
+
+				Zum Schluss wird Ihnen eine Lizenzvereinbarung zwischen Ihnen und GEO-LEOe-docs angezeigt. Sie müssen dieser Vereinbarung zustimmen, um Ihre Publikation veröffentlichen zu können. <a href="http://http://e-docs.geo-leo.de/rights">GEO-LEOe-docs Linzenzvereinbarung ohne Anmeldung lesen.</a><br />Bitte beachten Sie:<br />
+
+				Ist Ihre Publikation vor der Veröffentlichung auf GEO-LEOe-docs bei einem Verlag bereits erschienen, vergewissern Sie sich, dass Sie die nötigen Rechte für eine Open Access Veröffentlichung besitzen. </li>
+
+			
+
+
+
+			
+
+		
+
+		
+
+	</ol>
+
+	Zur Navigation innerhalb des Veröffentlichungsprozesses verwenden Sie bitte die Knöpfe "zurück" und "weiter" im jeweiligen Schritt. 
+
+	Solange der Veröffentlichungsprozess nicht abgeschlossen ist, können Sie den Prozess jeder Zeit abbrechen und entweder alles endgültig löschen oder die eingegebene Daten speichern und mit der Veröffentlichung später fortfahren.
+</div>
+
+	<h3>Unvollendete Veröffentlichungsprozesse</h3>
+<div>
+
+	Sind Sie auf GEO-LEOe-docs angemeldet, so finden Sie im linken Menü unter "Mein GEO-LEOe-docs" die Option "Dokument veröffentlichen". Auf dieser Seite werden Ihnen alle Veröffentlichungen angzeigt, die Sie schon einmal gestartet, abgebrochen und gespeichert haben. 
+
+	Wollen Sie ... 
+
+	<ul>
+
+		<li>den Veröffetnlichungprozess fortsetzen, so klicken Sie einfach auf den Titel der abgebrochenen Veröffentlichung und der Prozess wird wieder gestartet und die vorhandenen Daten angezeigt.</li>
+
+		<li>die angefangene Veröffentlichung endgültig löschen, so setzen Sie das entsprechnde Häckchen und klicken Sie auf "entfernen".</li>
+
+	</ul>
+
+
+
+	Ist der Veröffetnlichungsprozess abgeschlossen, wird der Neupublikation ein permanenter URL zugewiesen, der Ihnen per E-Mail zugeschickt wird. GEO-LEOe-docs garantiert, dass Ihr Dokument unter diesem URL daurhaft erreichbar ist.
+
+
+
+<b>Der beschriebene Prozess ist für die Veröffentlichung einzelner Dokumente gedacht. Beabsichtigen Sie regelmäßig oder größere Mengen von Publikationen bei GEO-LEOe-docs, steht Ihnen unsere SWORD-Schnittstelle zur Verfügung. <a name="sword">Näheres zur SWORD-Schnittstelle</a></b>
+
+        
+
+</div>
+
+
+
+<h3>Registrierungsprozess</h3>
+
+<div>
+
+		<ul>
+
+		<li>Klicken Sie auf "Registrieren" unter "Mein GEO-LEOe-docs" im linken Hauptmenü.</li>
+
+		<li>Tragen Sie in das Formular Ihre E-Mail-Adresse ein.</li>
+
+		<li>Eine Registrierunganforderung mit einem Link zum Benutzerkonto-Formular wird an die angegebene E-Mail-Adresse geschickt.</li>
+
+		<li>Sie erhalten einen Benutzerkonto bei GEO-LEOe-docs erst dann, wenn Sie dem mitgeschickten Link folgen und das ausgefüllte Formular wegschicken. Dazu werden die folgenden Angaben benötigt:
+
+			<ul>
+
+				<li>Benutzername: Vorname und Nachname</li>
+
+				<li>Telefon (optional)</li>
+
+				<li>Die Sprache, in der Sie eventuell E-Mail-Nachichten über abonnierte Neuerscheinungen erhalten wünschen.</li>
+
+			</ul>	
+
+		</li>
+
+		</ul>
+
+		Durch dieses Verfahren wird sichergestellt, dass sich kein Fremder mit Ihrer E-Mail-Adresse bei uns registrieren kann. <br />
+
+		Nach der Registrierung sind sie berechtigt, auf GEO-LEOe-docs Dokumente in allen Sammlungen zu veröffentlichen.
+
+		
+
+		
+
+</div>
+
+<h3>Benutzerprofil</h3>
+
+<div>
+
+        Angemeldeten Nutzern steht im linken Menü unter "Mein GEO-LEOe-docs" die Option "Benutzerprofil" zur Verfügung.
+
+	Hier können Sie 
+
+	<ul>
+
+		<li>Ihre Angaben (Name, Telefon, Sprache) korrigieren</li>
+
+		<li>Ihr Passwort ändern</li>
+
+		<li>Neuerscheinungen in ausgewählten Sammlungen abonnieren bzw. bestehende Abonnements kündigen. 
+
+	Um über Neuerscheinungen in bestimmten Sammlungen per E-Mail benachrichtigt zu werden, wählen sie im Dropdown-Menü die betreffende Sammlung aus. Um weitere Sammlungen zu abonnieren, klicken Sie dann auf "add". Die ausge</li>
+
+	</ul>
+
+
+
+</div>
+
+
+
+<h3>Dateiformat der Publikationen</h3>
+
+<div>
+
+        Obwohl GEO-LEOe-docs beliebige textbasierte Dokumentformate (PDF, word, excel, rtf, postscript ...) beim Hochladen akzeptiert, veröffentlichen Sie bitte Ihre Publikation möglichst in <b>PDF</b>- bzw. <b>PFD/A</b>-Format. Nur dann können wir garantieren, dass Ihre Publikation über einen längeren Zeitraum nutzbar ist.<br />
+
+	Nicht-Textbasierte Dokumente (z.B. gescannte Bilder) werden in der Volltextsuche nicht gefunden, wenn der enthaltene Text nicht zusätzlich mitpubliziert wird.<br />
+
+	Bitte schränken Sie die Zugriffsmöglickeiten (etwa durch Passwortschutz, Verschlüsselung, Kopieren von Text verbieten etc.) auf Ihre PDF-Dokument nicht ein! Dadurch schliessen Sie ihre Publikation aus der Volltextsuche aus. Ferner kann die Langzeitarchivierung Ihres Dokuments (z.B. die Überführung einer Kopie in andere physische Formate) dadurch verhindert werden.
+
+<br />GEO-LEOe-docs bürgt für die Itegrität seiner Dokumente, d.h. wir garantieren, dass hochgeladene Dokumente ohne jegliche Änderung archiviert werden. 
+
+        
+
+</div>
+
+<h3>Wer darf auf GEO-LEOe-docs veröffentlichen?</h3>
+
+
+
+ <div>
+
+
+
+        Die Veröffentlichung fachspeziefischer Literatur ist jedem erlaubt. Sie können das Recht dazu erwerben, indem Sie sich auf unserem Server registrieren. <a name="Registrierung">Siehe Registrierungsprozess!</a>
+
+	Im Falle von Missbarauch (Falschangaben, unbrauchbare Veröffentlichungen, virenversäuchte Dokumente etc.) behält jedoch GEO-LEOe-docs das Recht, Benutzerkonten zu sperren!
+
+
+
+	
+
+</div>
+
+<h3>Schnittstellen</h3>
+
+  <div>
+
+     
+
+             <ul>
+
+                <li><a href="http://e-docs.geo-leo.de/oai/request?verb=Identify">OAI 2.0</a> für Metadata-Harvesting</li>
+
+                <li><a href="http://e-docs.geo-leo.de/SRW/search">SRU 1.1</a> für die Einbindung der Dokumente in eine Metasuche</li>
+
+                <li><a href="http://e-docs.geo-leo.de/sword/">SWORD</a> für regelmäßige Lieferung oder größere Mengen von Dokumenten<br />
+
+		Für die Nutzung der SWORD-Schnittstelle ist ein spezieller Account notwendig. Bitte kontaktieren Sie uns! 	
+
+		</li>
+
+              </ul>
+
+
+
+</div>
+
+<h3>Services</h3>
+
+<div>
+
+	<ul>
+
+		<li>Suchmaschine</li>
+
+		<li>RSS-Feed</li>
+
+		<li>Bibliographische Daten für Zotero</li>
+
+	</ul>
+
+</div>
+
+
+
+<h3>Welche Vorteile hat das Veröffentlichen auf GEO-LEOe-docs</h3>
+
+<div>
+
+	<ul>	
+
+		<li>Sichtbarkeit: Ihre Veröffentlichung wird in google/google-scholar, in verschiedenen Fachportalen und Serviceprovidern gefunden</li>
+
+		<li>Langzeitarchivierung:</li>
+
+		<li>Zitierbarkeit:</li>
+
+		<li>Schutz gegen Plagiat:</li>
+
+	</ul>
+
+</div>
+
+
+
+<h3>Was darf der Nutzer mit den Dokumenten auf GEO-LEOe-docs tun?</h3>
+
+<div>
+
+	Im Allgemeinen darf jedes Dokument zum privaten Bedarf:
+
+	<ul>	
+
+		<li>heruntergeladen</li>
+
+		<li>gespeichert</li>
+
+		<li>in keiner Anzahl gedruckt</li>
+
+		werden.
+
+	</ul>
+
+	Ohne weiterer expliziter Erlaubnis ist verboten:
+
+	<ul>	
+
+		<li>die Vielfältigung</li>
+
+		<li>die Veröffentlichung</li>
+
+		der Dokumente.
+
+	</ul>
+
+	Sind die oben genannte allgemeine Nutzungsbedingungen für ein Dokument durch einen Creative-Commons-Lizenz erweitert, so können Sie die diese auf der Download-Seite des jeweiligen Dokuments aufrufen. 
+
+</div>
+
+
+
+<h3>Welche Rechte übertragen Autoren GEO-LEOe-docs bei der Veröffentlichung?</h3>
+
+<div>
+
+		
+
+		<ul>	
+
+		<li>Autoren räumen dem Publikationsserver das <b>nicht ausschliessliche</b> Recht zur öffentlichen Zugänglichmachung Ihrer Publikation. D.h. Die Autoren behalten das Recht, Ihre Publikationen auch anderweitig (auf Ihrem Homepage, bei Verlagen usw.) zu veröffentlichen.
+
+heruntergeladen</li>
+
+		<li>GEO-LEOe-docs wird erlaubt, Kopien der Dokumente im Zuge der Langzeitarchivierung in andere Format zu überführen.</li>
+
+		<li>GEO-LEOe-docs wird erlaubt, die Beschreibungsdaten (Metadaten) der Publikationen anderen Anbietern zur Verfügung zu stellen und die Dokumente in nationale Sammelaufträge einzubeziehen.</li>
+
+		
+
+	</ul>
+
+
+
+</div>
+
+
+
+<h3>Darf ein Autor seine bereits veröffentlichte Publikation verändern oder löschen?</h3>
+
+<div>
+
+Dies ist nur solange möglich, bis der Veröffentlichungsprozess einer Publikation nicht abgeschlossen ist.<br />
+
+Einmal abgeschlossene Veröffentlichungen dürfen vom Autor aus folgenden Gründen nicht mehr verändert oder gelöscht werden: 
+
+<ul>
+
+	<li>GEO-LEOe-docs versieht jede Publikation mit einem persistenen URL und grantiert die langfristige Erreichbarkeit der Publikationen.</li>
+
+	<li>GEO-LEOe-docs bürgt für die Integrität der hochgeladenen Dokumenten. D.h. die Dokumente dürfen nach der Veröffentlichung nicht verändert werden.</li>
+
+</ul>
+
+		
+
+
+
+In begründeten Ausnahmefällen können wir eventulle Änderungen der Beschreibunsdaten oder eine Ergänzung ihrer Publikation um eine weitere Version, errata u.ä. vornehmen. Bitte kontaktieren Sie uns in solchen Fällen!
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="hilfLinks">
+
+        <ul>
+
+                <li><a href="#search">Suche</a></li>
+
+                <li><a href="#advanced">Erweiterte Suche</a></li>
+		<li><a href="#register">Registrierungsprozess</a></li>
+
+                <li><a href="#submit1">Veröffentlichungsprozess</a></li>
+                <li><a href="#register">Unvollendete Veröffentlichungsprozesse</a></li>
+		<li><a href="#fileformat">Dateiformat der Publikationen</a></li>
+
+                <li><a href="#profil">Benutzerprofil</a></li>
+
+                <li><a href="#interfaces">Schnittstellen</a></li>
+
+                <li><a href="#handles">Wer darf auf GEO-LEOe-docs veröffentlichen?</a></li>
+
+                <li><a href="#advantage">Welche Vorteile hat das Veröffentlichen auf GEO-LEOe-docs?</a></li>
+
+                <li><a href="#userrights">Was darf der Nutzer mit den Dokumenten auf GEO-LEOe-docs tun?</a></li>
+
+                <li><a href="#depositlicense">Welche Rechte übertragen Autoren GEO-LEOe-docs bei der Veröffentlichung?</a></li>
+
+                <li><a href="#delete">Darf ein Autor seine bereits veröffentlichte Publikation verändern oder löschen?</a></li>
+
+
+
+                
+
+ </ul>
+
+</div>
+
+</div>
+
+
+
+
+

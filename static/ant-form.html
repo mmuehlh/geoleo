@@ -1,0 +1,206 @@
+  
+  
+
+
+  
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head> 
+<title>Formular - Zeitschriftenartikel</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+
+<link rel="shortcut icon" href="/gldocs/themes/gldocs/images/favicon.ico" type="image/x-icon"/>
+<link type="text/css" rel="stylesheet" href="static/css/forms.css"/>
+
+<style type="text/css">
+	body {background-color: #ffffff}
+</style>
+<script type="text/javascript" language="JavaScript" src="static/js/jquery.js"></script>
+
+
+
+
+  <script type="text/javascript">
+
+	var i=1;
+	function addNamefield() {
+	editors = "";
+
+	$('#editor').append('<label class="ds-composite-component"><input class="ds-text-field" name="editor_last' + i + '" type="text"><br></label><span>&nbsp;&nbsp;</span><label class="ds-composite-component last"><input class="ds-text-field" name="editor_first'+i+'" type="text"><br></label><br />');
+
+
+	i++;
+	/*$("input[name^='editor_last']").each(function() {
+			if ($(this).val().length > 0) {
+			editors = editors + "; " +  $(this).val();	
+			}
+		});
+	$("#errmsg").html("Editoren: " + editors)
+	return false;
+	
+	}
+	*/
+	return false;
+	}
+
+	function writeCitation() {
+		
+		size = ($("input[name^='editor_last']").size());
+		var citation = "";
+		editors = "";
+		
+		for (i=0; i < size; i++) {
+		
+		     if (($("input[name^='editor_last" + i + "']").val().length > 0) && ($("input[name^='editor_first" + i + "']").val().length > 0)) {
+
+			editors = editors + $("input[name^='editor_last" + i + "']").val() + ', ' + $("input[name^='editor_first" + i + "']").val() + "; ";
+		      
+			
+		      }
+			else if (($("input[name^='editor_last" + i + "']").val().length > 0) | ($("input[name^='editor_first" + i + "']").val().length > 0))
+			{
+				$("#errmsg").html("Bitte geben Sie den Namen der Editoren vollständig ein!")
+	
+				return false;
+			}
+			
+		      		
+		  }
+
+		if (editors == "") {
+			$("#errmsg").html("Bitte geben Sie alle Editoren ein!");
+			return false;
+		}
+
+		
+		title = document.getElementById('title').value;
+		publisher = document.getElementById('publisher').value;
+		year = document.getElementById('year').value;
+		pages = document.getElementById('firstPage').value + "-" + document.getElementById('lastPage').value;
+		subtitle = document.getElementById('title_alternative').value;
+		
+		if (title == "") {
+			$("#errmsg").html("Bitte geben Sie den Titel des Sammelbandes an!");
+			return false;
+		}
+		if (publisher == "") {
+			$("#errmsg").html("Bitte geben Sie den Velag an!");
+			return false;
+		}
+
+		if ((year == "") || (isNaN(year))){
+			$("#errmsg").html("Das Erscheinungsjahr ist ungültig oder fehlt");
+			return false;
+		}
+		
+		if (pages == "-") {
+			$("#errmsg").html("Bitte geben Sie die Seiten Ihres Beitrags im Sammelband an !");
+			return false;
+		}
+                if ( subtitle != "") {
+                        subtitle = " - " + subtitle;
+                }
+
+		citation = editors.substring(0, editors.length-2) + " (eds.): " + title + subtitle + "; " + year +  ", " + publisher + " ,p. " + pages;	
+		
+
+		window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_identifier_citation').value=citation;
+		window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_publisher').value=publisher;
+		window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_date_issued_year').value=year;
+		self.close();
+		return false;
+	}
+
+
+
+	$(document).ready(function() {
+
+	pbl = window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_publisher').value;
+		year = window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_date_issued_year').value;
+
+	document.getElementById('publisher').value=pbl;
+	document.getElementById('year').value=year;
+	});
+	
+  </script>
+</head>
+
+
+
+
+
+<body>
+<div id="ds-body">
+<h1>Zitationsdaten: Sammelbandbeitrag</h1>
+<div id="errmsg"></div>
+<form id="form" name="form" action="">
+<ul>
+<li class="ds-form-item odd">
+<label class="ds-form-label" for="editor">*Editor(en):</label>
+<div id="editor" class="ds-form-content">
+<label class="ds-composite-component">
+<input class="ds-text-field" name="editor_last0" type="text">
+<br>Nachname, <i>z. B. Mustermann</i>
+</label>
+<label class="ds-composite-component last">
+<input class="ds-text-field" name="editor_first0" type="text">
+<br>Vorname(n) + Titel, <i>Max Dr.</i>
+</label>
+<input id="add" type="submit" name="add" value="add" onclick="javascript: addNamefield();return false;"> 
+<div class="spacer">&nbsp;</div>
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="title">*Titel des Sammelbandes:</label>
+<div class="ds-form-content">
+<input id="title" class="ds-text-field submit-text" name="title" title="" type="text">
+</div>
+</li>
+<li class="ds-form-item odd">
+<label class="ds-form-label" for="title_alternative">Untertitel:</label>
+<div class="ds-form-content">
+<input id="title_alternative" class="ds-text-field submit-text" name="title_alternative" title="Alternativ- oder Untertitel" type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="publisher">*Verlag:</label>
+<div class="ds-form-content">
+<input id="publisher" class="ds-text-field submit-text" name="dc_publisher" value="" title="" type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="year">*Erscheinungsjahr:</label>
+<div class="ds-form-content">
+<input id="year" class="ds-text-field submit-text" name="year" value="" title="" type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="page">*Seiten des Beitrags von:</label>
+<div class="ds-form-content">
+<input id="firstPage" class="ds-text-field submit-text" name="chapter" value="" ti
+tle="" type="text">
+bis:
+<input id="lastPage" class="ds-text-field" name="lastPage" type="text">
+</label>
+</div>
+</li>
+<li class="ds-form-item odd last">&nbsp;
+                            <div class="ds-form-content">
+	<input type="submit" name="cancel" onclick="window.close();" value="verwerfen und schliessen" >
+	<input type="submit" name="submit" onclick="javascript: writeCitation();return false;" value="&uuml;bernehmen und schliessen" >
+</div>
+</li>
+</ul>
+</form>
+</div>
+</body>
+</html>
+

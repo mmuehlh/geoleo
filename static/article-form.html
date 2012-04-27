@@ -1,0 +1,157 @@
+  
+  
+
+
+  
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head> 
+<title>Formular - Zeitschriftenartikel</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+
+<link rel="shortcut icon" href="themes/gldocs/images/favicon.ico" type="image/x-icon"/>
+<link type="text/css" rel="stylesheet" href="static/css/forms.css"/>
+
+<style type="text/css">
+	body {background-color: #ffffff}
+</style>
+<script type="text/javascript" language="JavaScript" src="static/js/jquery.js"></script>
+
+
+
+
+  <script type="text/javascript">
+
+	function writeCitation() {
+		var citation = "";
+		
+		journal = document.getElementById('journal').value;
+		volume = document.getElementById('volume').value;
+		issue = document.getElementById('issue').value;
+		firstPage = document.getElementById('firstPage').value;
+		lastPage = document.getElementById('lastPage').value;	
+		year = document.getElementById('year').value		
+
+		if (journal == "")  {
+			$('#errmsg').html('Bitte geben Sie den Namen der Zeitschrift an!');
+			return false;
+		}
+
+		if (firstPage == "")  {
+			$('#errmsg').html('Bitte geben Sie den Seitenanfang Ihres Beitrags an!');
+			return false;
+		}
+		if (lastPage == "")  {
+			$('#errmsg').html('Bitte geben Sie das Seitenende Ihres Beitrags an!');
+			return false;
+		}
+		if ((year == "") || (isNaN(year))) {
+			$('#errmsg').html('Das Erscheinungsjahr fehlt oder ist ungültig!');
+			return false;
+		}
+		
+		
+		citation = journal + "; ";
+		if (volume != "")  {
+			citation += "Vol. " + volume + ", ";
+		}
+		citation = citation + "." + year + ", ";
+		if (issue != "")  {
+			citation += "Nr. " + issue + ", ";
+		}
+		
+		citation = citation + "p. " + firstPage + "-" + lastPage; 
+		
+		
+		window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_identifier_citation').value=citation;
+
+		self.close();
+		return false;
+	}
+
+	function validateNumber(id){
+
+		var value = $('#'+id).val();
+		
+	}
+
+	$(document).ready(function() {
+	year = window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_date_issued_year').value;
+
+	document.getElementById('year').value=year;
+
+	});
+
+
+  </script>
+</head>
+
+
+
+
+
+<body>
+<div id="ds-body">
+<h1>Zitationsdaten: Zeitschriftenartikel</h1>
+<div id="errmsg"></div>
+<form id="form" name="form" action="">
+<ul>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="journal">*Zeitschriftenname:</label>
+<div class="ds-form-content">
+<input id="journal" class="ds-text-field submit-text" name="title" title="" type="
+text">
+</div>
+</li>
+<li class="ds-form-item odd">
+<label class="ds-form-label" for="volume">Bandnr.:</label>
+<div class="ds-form-content">
+<input id="volume" class="ds-text-field submit-text" name="title_alte
+rnative" title="Alternativ- oder Untertitel" type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="issue">Heftnr.:</label>
+<div class="ds-form-content">
+<input id="issue" class="ds-text-field submit-text" name="dc_publisher" valu
+e="" title="" type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="year">*Erscheinungsjahr:</label>
+<div class="ds-form-content">
+<input id="year" class="ds-text-field submit-text" name="year" value="" title=""
+ type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="page">*Seiten von:</label>
+<div class="ds-form-content">
+<input id="firstPage" class="ds-text-field submit-text" name="chapter" value="" ti
+tle="" type="text">
+bis:
+<input id="lastPage" class="ds-text-field" name="lastPage" type="text">
+</label>
+</div>
+</li>
+
+<li class="ds-form-item odd last">&nbsp;
+                            <div class="ds-form-content">
+        <input type="submit" name="cancel" onclick="window.close();" value="verwerfen und schliessen" >
+        <input type="submit" name="submit" onclick="javascript: writeCitation();return false;" value="&uuml;bernehmen und schliessen" >
+</div>
+</li>
+</ul>
+</form>
+
+</body>
+</html>
+

@@ -1,0 +1,213 @@
+  
+  
+
+
+  
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head> 
+<title>Formular - Zeitschriftenartikel</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+
+<link rel="shortcut icon" href="themes/gldocs/images/favicon.ico" type="image/x-icon"/>
+<link type="text/css" rel="stylesheet" href="static/css/forms.css"/>
+
+<style type="text/css">
+	body {background-color: #ffffff}
+</style>
+<script type="text/javascript" language="JavaScript" src="static/js/jquery.js"></script>
+
+
+
+
+  <script type="text/javascript">
+  
+
+	var i = 1;  //number of author fields
+
+	function addNamefield() {
+		
+		$('#add').before('<input id="author_last_' + i + '" name="author_last_' + i + ' type=text value=""><span>&nbsp;&nbsp;</span><input id="author_first_' + i + '" name="author_first_' + i + '" type=text value=""><span>&nbsp;&nbsp;</span>');
+		i++;
+	}
+
+
+	function writeCitation() {
+		var authors = "";
+                var citation = "";
+		
+                for (j=0; j < i; j++) {
+
+                 if (($("input[name^='author_last_" + j + "']").val().length > 0) && ($("input[name^='author_first_" + j + "']").val().length > 0)) {
+
+                        authors = authors + $("input[name^='author_last_" + j + "']").val() + ', ' + $("input[name^='author_first_" + j + "']").val() + "; ";
+
+
+                      }
+                      else if (($("input[name^='author_last_" + j + "']").val().length > 0) | ($("input[name^='author_first_" + j + "']").val().length > 0))
+                      {
+                                $("#errmsg").html("Bitte geben Sie den Namen der Editoren vollständig ein!")
+
+                                return false;
+                        }
+
+
+                  }
+		
+		
+		
+		title = document.getElementById('title').value;
+		subtitle = document.getElementById('title_alternative').value;
+		publisher = document.getElementById('publisher').value;
+		year = document.getElementById('year').value;
+		chapter = document.getElementById('chapter').value;
+		
+		if (authors == "") {
+			$("#errmsg").html("Bitte geben Sie den Namen aller Authoren ein!");
+			return false;
+		}
+
+		if (title == "") {
+			$("#errmsg").html("Bitte geben Sie den Titel des Buches ein!");
+			return false;
+		}
+		if (publisher == "") {
+			$("#errmsg").html("Bitte geben Sie den Verlag ein!");
+			return false;
+		}	
+		if ((year == "") || (isNaN(year)) || (year.length != 4)){
+			$("#errmsg").html("Das Erscheinungsjahr ist ungültig oder fehlt!");
+			return false;
+		}
+		if (chapter == "") {
+			$("#errmsg").html("Bitte geben Sie an, welches Kapitel des Buches Ihr Dokument ist!");
+			return false;
+		}
+		if (subtitle != "") {
+			subtitle = " - " + subtitle;
+		}	
+		citation = authors.substring(0, authors.length-2) + " : " + title + subtitle + "; " + year + ", " + publisher + " / Kap. " + chapter;	
+
+		window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_identifier_citation').value=citation;
+		window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_publisher').value=publisher;
+		window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_date_issued_year').value=year;
+		self.close();
+		return false;
+	}
+
+
+	$(document).ready(function() {
+
+		//Fill in field values allready existent in parent 
+		publisher = window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_publisher').value;
+		year = window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_date_issued_year').value;
+		document.getElementById('publisher').value=publisher;
+		document.getElementById('year').value=year;
+		
+		authors_last = new Array();
+		authors_first = new Array();
+		i = 1;
+		
+		
+		
+		while (window.opener.document.getElementsByName("dc_contributor_author_last_" + String(i)).length > 0) {
+			authors_last = window.opener.document.getElementsByName("dc_contributor_author_last_" + String(i));
+			authors_first = window.opener.document.getElementsByName("dc_contributor_author_first_" + String(i));
+			$('#add').before('<input id="author_last_' + i + '" name="author_last_' + i + ' type=text value=""><span>&nbsp;&nbsp;</span><input id="author_first_' + i + '" name="author_first_' + i + ' type=text value=""><span>&nbsp;&nbsp;</span>');
+			$("#author_last_"+ i).val(authors_last[0].value);
+			$("#author_first_"+ i).val(authors_first[0].value);
+			i++;	
+			
+
+		}
+		author_last = window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_contributor_author_last').value;
+		author_first = window.opener.document.getElementById('aspect_submission_StepTransformer_field_dc_contributor_author_first').value;
+
+		
+		if ((author_last != "") && (author_first != "")) {
+			$("#author_last_0").val(author_last);
+			$("#author_first_0").val(author_first);
+		}	
+
+
+
+	});
+
+  </script>
+</head>
+
+
+
+
+
+<body>
+<div id="ds-body">
+<h1>Zitationsdaten: Buchbeitrag</h1>
+<div id="errmsg"></div>
+<form id="form" action="">
+<ul>
+<li class="ds-form-item odd">
+<label class="ds-form-label" for="editor">*Autor(en):</label>
+<div id="author" class="ds-form-content">
+<label class="ds-composite-component">
+<input id="author_last_0" class="ds-text-field" name="author_last_0" type="text">
+<br>Nachname, <i>z. B. Mustermann</i>
+</label>
+<label class="ds-composite-component last">
+<input id="author_first_0" class="ds-text-field" name="author_first_0" type="text">
+<br>Vorname(n) + Titel, <i>Max Dr.</i>
+</label>
+<input id="add" type="submit" name="add" value="add" onclick="javascript: addNamefield();return false;"> 
+<div class="spacer">&nbsp;</div>
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="title">*Titel des Buches:</label>
+<div class="ds-form-content">
+<input id="title" class="ds-text-field submit-text" name="title" title="" type="text">
+</div>
+</li>
+<li class="ds-form-item odd">
+<label class="ds-form-label" for="title_alternative">Untertitel:</label>
+<div class="ds-form-content">
+<input id="title_alternative" class="ds-text-field submit-text" name="title_alternative" title="Alternativ- oder Untertitel" type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="publisher">*Verlag:</label>
+<div class="ds-form-content">
+<input id="publisher" class="ds-text-field submit-text" name="dc_publisher" value="" title="" type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="year">*Erscheinungsjahr:</label>
+<div class="ds-form-content">
+<input id="year" class="ds-text-field submit-text" name="year" value="" title="" type="text">
+</div>
+</li>
+<li class="ds-form-item even">
+<label class="ds-form-label" for="year">*Kapitel:</label>
+<div class="ds-form-content">
+<input id="chapter" class="ds-text-field submit-text" name="chapter" value="" title="" type="text">
+</div>
+</li>
+<li class="ds-form-item odd last">&nbsp;
+                            <div class="ds-form-content">
+	<input type="submit" name="cancel" onclick="window.close();" value="verwerfen und schliessen" >
+	<input type="submit" name="submit" onclick="javascript: writeCitation();return false;" value="&uuml;bernehmen und schliessen" >
+</div>
+</li>
+</ul>
+</form>
+
+</body>
+</html>
+

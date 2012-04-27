@@ -1,0 +1,776 @@
+/**
+ * Stylesheet for GEO-LEO e-docs
+ * Author: Tobias Schäfer, State and University Library Göttingen
+ *         <tobias.schaefer@sub.uni-goettingen.de>
+ *
+ * Extension for GEO-LEO stylesheet by Sven-S. Porst and Henrik Cederblad
+ */
+
+ 
+/* Basic Style Overrides
+========================================================================== */
+
+html {
+	overflow-y: scroll;
+}
+body {
+	color: #464646;
+	height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: left;
+}
+h1 {
+	color: #6C564C;
+	line-height: 1;
+	/* font-weight: normal; */
+}
+div + h1 {
+	margin-top: 2em;
+}
+div + h2 {
+	margin-top: 1.3333em;
+}
+input,
+select {
+	height: 1.66667em;
+	font: 1em/1 Verdana, sans-serif;
+	border-color: #B4B4B4 #D4D4D4 #D4D4D4 #B4B4B4;
+	border-style: solid;
+	border-width: 1px;
+	vertical-align: baseline;
+}
+select[multiple] {
+	height: auto;
+}
+input[type=checkbox],
+input[type=radio] {
+	margin: 0 .5em 0 0;
+	vertical-align: top;
+}
+input[type=password],
+input[type=text] {
+	width: 300px;
+	height: 1.4em;
+	padding: .1em .3em;
+}
+button,
+input[type=submit],
+input[type=reset] {
+	cursor: pointer;
+	height: 1.8em;
+	border-color: #D4D4D4 #B4B4B4 #B4B4B4 #D4D4D4;
+	border-radius: 3px;
+	color: #555;
+	font-weight: bold;
+	padding: .1em .3em;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+	text-transform: uppercase;
+	background: url(button_shade_large.png) repeat-x 0 0;
+	vertical-align: bottom;
+}
+p + fieldset {
+	margin-top: 1em;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+li ul {
+	padding: 0 0 0 2em;
+}
+li > div + ul {
+	padding-top: .3em;
+}
+table {
+	text-align: left;
+	width: 100%;
+}
+tr + tr {
+	border-top: 1px solid #6C564C;
+}
+th {
+	color: #6C564C;
+	background: url(snow.png);
+}
+td, th {
+	padding: .3em;
+	vertical-align: top;
+}
+td a {
+	display: block;
+}
+ul + p,
+table + div,
+ul + div {
+	margin-top: 1em;
+}
+fieldset ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+:focus {
+	border-color: #039;
+}
+.hidden {
+	display: none;
+}
+p.hidden + p {
+	margin: 0 !important;
+}
+.spacer {
+	display: none;
+}
+.error {
+	color: #c22121;
+}
+span.error {
+	clear: both;
+	display: block;
+	color: #c22121;
+	font-size: 0.9em;
+	margin-top: 3px;
+}
+input.error {
+	border-color: #C22121;
+}
+
+
+/* Page Layout
+========================================================================== */
+
+#page {
+	background: url(content-bg.png) center top repeat-y;
+	overflow: hidden;
+}
+#head {
+	width: 960px;
+	margin: 0 auto;
+}
+#content {
+	margin: 0;
+	overflow: visible;
+	padding-bottom: 60px;
+}
+#ds-main {
+	background: url(header_repeat.png) center top repeat-x;
+	overflow: hidden;
+}
+#ds-content {
+	overflow: visible;
+	height: 100%; /* EDIT: LINE ADDED (CHROME FIX) */
+}
+#ds-body {
+	height: 100%;
+	padding: 30px 0 90px;
+	float: right;
+}
+#ds-body form {
+	background: url(snow.png);
+	border: 1px solid #ddd;
+	padding: 15px;
+}
+#ds-body form p {
+	margin: 0;
+}
+#ds-body form p + p {
+	margin-top: .5em;
+}
+#ds-header-logo-link {
+	display: block;
+	margin-left: 12px;
+	background: url(geo-leo_e-docs_logo.png) center top no-repeat;
+	height: 170px;
+	width: 240px;
+	text-indent: -9999px;
+}
+
+
+/* Common Styles
+========================================================================== */
+
+.ds-div-head {
+	width: 500px;
+}
+div.ds-logo-wrapper {
+	position: absolute;
+	right: 0;
+	top: 30px;
+}
+div.ds-logo-wrapper img {
+	width: 150px;
+}
+.browse {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+}
+.browse h2 {
+	margin: 0 0 .5em 0;
+	font-size: 1em;
+	font-weight: bold;
+}
+.browse ul {
+	display: inline;
+}
+.browse li {
+	display: inline;
+	white-space: nowrap;
+}
+.browse li + li {
+	margin-left: 1em;
+}
+.repository ul + ul {
+	margin-top: 1em;
+}
+div.pagination,
+div.pagination-masked {
+	margin: 1em 0;
+}
+div.pagination-masked ul {
+	padding: 0;
+}
+ul.pagination-links {
+	height: 1.5em;
+	padding: 0;
+}
+ul.pagination-links li {
+	display: inline;
+}
+ul.pagination-links a {
+	background: url(snow.png);
+	border: 1px solid #ddd;
+	color: #6C564C;
+	padding: .3em .5em;
+}
+li.current-page-link a {
+	border-color: #6C564C;
+	font-weight: bold;
+}
+ul.pagination-links a:hover {
+	background: #6C564C;
+	color: #fff;
+	text-decoration: none;
+}
+ul.alphabet li {
+	display: inline;
+}
+ul.ds-artifact-list li + li {
+	margin-top: 1em;
+}
+div.artifact-info {
+}
+.thumbnail-wrapper {
+	float: left;
+	margin: 0 20px 20px 0px;
+}
+li .thumbnail-wrapper {
+	display: inline-block;
+	float: right;
+	margin: .33333em 0 0 0;
+}
+li .thumbnail-wrapper img {
+	max-height: 90px;
+	width: 60px;
+}
+li .thumbnail-wrapper + .artifact-description {
+	border-right: 1px solid #6C564C;
+	display: inline-block;
+	padding: 0 10px 0 0;
+	vertical-align: top;
+	width: 620px;
+	min-height: 95px;
+}
+.artifact-abstract {
+	color: #777;
+}
+.simple-item-view-authors {
+	font-weight: bold;
+}
+.simple-item-view-bookmark a {
+	background: url(bookmark.png) left center no-repeat;
+	padding: 20px;
+}
+.simple-item-view-bookmark,
+.license-info,
+.ds-item-categories,
+.ds-item-keywords {
+	margin-top: 20px;
+}
+.license-info p {
+	clear: both;
+	margin: 0;
+}
+.item-summary-view-metadata {
+	clear: both;
+}
+.item-view-long a {
+	color: #c4c4c4;
+	float: right;
+}
+.publisher-link {
+	vertical-align: middle;
+}
+.detail-view + h2.ds-list-head {
+	left: 0;
+	position: absolute;
+}
+.detail-view + h2.ds-list-head + ul {
+	float: left;
+	margin: 4.5em 0 2em;
+}
+.detail-view + h2.ds-list-head + ul + h2.ds-list-head {
+	right: 0;
+	position: absolute;
+	margin-top: 1.33333em;
+}
+.detail-view + h2.ds-list-head + ul + h2 + ul {
+	float: right;
+	margin: 4.5em 0 2em;
+}
+.metadata {
+	margin: 0 0 2em 0;
+}
+.file-link a {
+	background: #6C564C;
+	color: #fff;
+	display: inline-block;
+	margin: 20px 0 0 0;
+	padding: .3em 2em;
+}
+.file-link a:hover {
+	background: #482E2A;
+	text-decoration: none;
+}
+.file-wrapper {
+	clear: left;
+}
+.file-wrapper .thumbnail-wrapper {
+	float: left;
+	clear: left;
+}
+.arrow,
+.ds-trail-arrow {
+	display: inline-block !important;
+	width: 1em;
+	text-indent: -9999px;
+	background: url(arrow_single_right.png) center center no-repeat;
+}
+*:first-child+html .arrow,
+*:first-child+html .ds-trail-arrow { /* IE 7 fix */
+	display: inline !important;
+	height: 1em;
+	margin: .3em .3em .3em 0;
+}
+.open {
+	background: url(open_close.png) 7px 5px no-repeat;
+	cursor: pointer;
+	display: inline-block;
+	width: 1.6em;
+	text-indent: -9999px;
+}
+.open.close {
+	background-position: 7px -17px;
+}
+.ds-progress-list {
+	padding: 0;
+	font-weight: bold;
+	font-size: .9em;
+	color: #888;
+	margin: 0 0 1em 0;
+}
+.ds-progress-list li {
+	display: inline;
+}
+li.current {
+	color: #6C564C;
+	background: url(snow.png);
+}
+p.subtitle { /* like h2 */
+	color: #6C564C;
+	font-size: 1.33333em;
+	font-weight: bold;
+	line-height: 1.125;
+	margin: 1.125em 0;
+}
+.rss {
+	display: inline-block;
+	margin-left: .5em;
+}
+.rss:hover {
+	background: url(snow.png);
+}
+.rss a {
+	background: url(rss.png) 5px center no-repeat;
+	border: 1px solid transparent;
+	display: block;
+	font-size: .6667em;
+	font-weight: bold;
+	height: 12px;
+	padding: 6px 6px 6px 24px;
+	text-indent: -9999px;
+}
+.rss a:hover {
+	border-color: #ddd;
+	text-decoration: none;
+	text-indent: 0;
+}
+
+
+/* Sidebar
+========================================================================== */
+
+#ds-options-wrapper {
+	/*background: url(snow.png) repeat-y 0 0;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;*/
+	padding: 30px 15px;
+	width: 200px;
+	/* Layout broken when using anchors
+	margin-bottom: -9979px !important;
+	padding-bottom: 9999px !important;
+	*/
+}
+#ds-options-wrapper label {
+	width: 200px;
+	display: inline-block;
+}
+#ds-options-wrapper input[type=text],
+#ds-options-wrapper input[type=password] {
+	width: 190px;
+	height: 25px;
+	line-height: 25px; /* IE fix */
+	border: 0 none;
+	background: url(input.png) no-repeat left 0;
+	padding: 0 5px;
+}
+#ds-options-wrapper input[type=text]:focus,
+#ds-options-wrapper input[type=password]:focus {
+	background-position: 0 -25px;
+}
+#ds-search-form input {
+	border: 0 none;
+}
+#ds-options input {
+	margin-bottom: .5em;
+}
+#ds-options a:visited,
+#ds-trail a:visited {
+	color: #039;
+}
+#ds-search-option .ds-button-field {
+	width: 22px;
+	height: 20px;
+	text-indent: -9999px;
+	top: -31px;
+	right: 3px;
+	background: #fff url(search.png) no-repeat right -2px;
+	float: right;
+	position: relative;
+	margin-bottom: -20px;
+	margin-top: 1px; /* IE 8 */
+}
+#ds-search-option .ds-button-field:hover,
+#ds-search-option .ds-button-field:active {
+	background-position: right -27px;
+}
+#ds-search-option a {
+	display: block;
+	text-align: right;
+}
+#ds-options-wrapper h1,
+#ds-options-wrapper h2 {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0 0 .5em;
+}
+#ds-options-wrapper li + li h2 {
+	margin: .5em 0 .5em;
+}
+#ds-options-wrapper ul {
+	padding: 0 0 0 1em;
+	margin: 0;
+}
+#ds-options-wrapper li {
+	margin: 0;
+}
+#ds-options-wrapper div {
+	margin: 0 0 1.5em;
+}
+#ds-options-wrapper #aspect_eperson_PasswordLogin_field_login_email,
+#ds-options-wrapper #aspect_eperson_PasswordLogin_field_login_password {
+	width: 190px;
+}
+
+
+/* Breadcrumbs
+========================================================================== */
+
+#ds-trail-wrapper {
+	/*color: #6C564C;*/
+	/*margin: 20px 10px 0 0;*/
+	font-weight: bold;
+	margin-left: 250px;
+	position: absolute;
+	top: 10px;
+	text-shadow: 0 0 .5em #fff;
+	/*width: 450px;*/
+	width: 700px;
+}
+#ds-trail-wrapper li {
+	display: inline;
+}
+
+
+/* Metadata Forms
+========================================================================== */
+
+.submission .ds-form-list input.ds-text-field,
+.administrative .ds-form-list input.ds-text-field,
+textarea.ds-textarea-field {
+	width: 500px;
+}
+table textarea.ds-textarea-field {
+	width: 400px;
+}
+#aspect_administrative_item_EditItemMetadataForm_field_value {
+	width: 570px;
+}
+#aspect_administrative_registries_EditMetadataSchema_list_edit-schema-new-field-form .ds-text-field,
+#aspect_administrative_item_EditItemMetadataForm_field_language,
+.ds-composite-component input.ds-text-field {
+	width: auto;
+}
+#aspect_administrative_item_EditItemMetadataForm_table_editItemMetadata input[type=text] {
+	width: 50px;
+}
+
+
+/* Other Forms
+========================================================================== */
+
+.ds-form-list + h2 {
+	margin-top: 20px;
+}
+.ds-form-item legend {
+	margin: 0;
+	color: inherit;
+}
+li.ds-form-item + li.ds-form-item{
+	clear: left;
+}
+li.ds-form-item.last {
+	margin-bottom: 0;
+}
+li.ds-form-item .ds-form-label{
+	font-weight: bold;
+}
+li.ds-form-item label.ds-composite-component{
+	display: block;
+	float: left;
+	padding: 0 .5em 0 0
+}
+li.ds-form-item label.ds-composite-component input.ds-text-field{
+	width: 250px;
+}
+.ds-add-button {
+	vertical-align: top;
+	margin-left: 8px;
+}
+.ds-checkbox-field input,
+.ds-radio-field input {
+	margin-left: 0;
+}
+.ds-checkbox-field label,
+.ds-radio-field label {
+	margin-right: 3px;
+}
+.ds-previous-values {
+	margin-top: 10px;
+	clear: both;
+}
+span.composite-help,
+span.field-help {
+	display: block;
+}
+.ds-checkbox-field legend,
+.ds-radio-field legend {
+	display: none;
+}
+form h2 {
+	margin-top: 0;
+}
+.field-help {
+	color: #6C564C;
+	font-style: italic;
+	display: inline;
+}
+#aspect_submission_StepTransformer_field_dc_date_issued_year,
+#aspect_submission_StepTransformer_field_dc_date_issued_day {
+	width: 50px;
+}
+#aspect_submission_StepTransformer_field_dc_identifier_value {
+	width: 130px;
+	margin-bottom: 0;
+}
+#aspect_artifactbrowser_CommunityViewer_div_community-search-browse,
+#aspect_artifactbrowser_CommunityViewer_div_collection-search-browse,
+#aspect_artifactbrowser_CollectionViewer_div_community-search-browse,
+#aspect_artifactbrowser_CollectionViewer_div_collection-search-browse {
+	background: url(snow.png);
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	padding: 15px;
+	width: 500px;
+}
+/* "Publish here" */
+#aspect_artifactbrowser_CommunityViewer_div_community-search-browse form,
+#aspect_artifactbrowser_CommunityViewer_div_collection-search-browse form,
+#aspect_artifactbrowser_CollectionViewer_div_community-search-browse form,
+#aspect_artifactbrowser_CollectionViewer_div_collection-search-browse form {
+	background: none;
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+#aspect_artifactbrowser_CommunityViewer_div_community-view > p, 
+#aspect_artifactbrowser_CommunityViewer_div_collection-view > p, 
+#aspect_artifactbrowser_CollectionViewer_div_community-view > p, 
+#aspect_artifactbrowser_CollectionViewer_div_collection-view > p {
+	background: url(publish_here_bg.png) center center no-repeat;
+	text-align: center;
+}
+#aspect_artifactbrowser_CommunityViewer_div_community-view > p a, 
+#aspect_artifactbrowser_CommunityViewer_div_collection-view > p a, 
+#aspect_artifactbrowser_CollectionViewer_div_community-view > p a, 
+#aspect_artifactbrowser_CollectionViewer_div_collection-view > p a {
+	background: #6C564C;
+	color: #fff;
+	display: inline-block;
+	padding: .3em .8em;
+}
+#aspect_artifactbrowser_CommunityViewer_div_community-view > p a:hover, 
+#aspect_artifactbrowser_CommunityViewer_div_collection-view > p a:hover, 
+#aspect_artifactbrowser_CollectionViewer_div_community-view > p a:hover, 
+#aspect_artifactbrowser_CollectionViewer_div_collection-view > p a:hover {
+	background: #482E2A;
+	text-decoration: none;
+}
+}
+#aspect_artifactbrowser_ConfigurableBrowse_field_update,
+#aspect_administrative_WithdrawnItems_field_update {
+	margin-top: 1em;
+}
+#aspect_discovery_CommunitySearch_field_query,
+#aspect_discovery_CollectionSearch_field_query {
+	width: 340px;
+}
+#ds-user-box {
+	background: url(snow.png);
+	border: 1px solid #ddd;
+	border-top: 0 none;
+	padding: .75em 1em;
+	position: absolute;
+	right: 10px;
+	top: 0;
+	z-index: 999;
+	text-align: center;
+}
+#ds-user-box p {
+	margin: 0;
+}
+#aspect_artifactbrowser_CommunityViewer_div_community-view .ds-list-head,
+#aspect_artifactbrowser_CommunityViewer_div_community-view ul {
+	width: 50%;
+}
+#aspect_submission_StepTransformer_list_submit-initial-questions .field-help {
+	position: absolute;
+	margin-left: 2em;
+}
+#aspect_submission_StepTransformer_list_submit-describe li + li {
+	margin-top: 1em;
+}
+#aspect_submission_StepTransformer_list_submit-describe li.last {
+	margin: 0;
+}
+
+#aspect_eperson_PasswordLogin_item_login-in {
+	margin-top: 1em;
+}
+
+#aspect_artifactbrowser_ItemViewer_div_item-view h2 {
+	border-top: 1px solid #6C564C;
+	padding-top: 1em;
+}
+#aspect_submission_StepTransformer_list_submit-progress li input {
+	background: none;
+	border: 0 none;
+	padding: 0;
+	text-transform: none;
+}
+#aspect_artifactbrowser_ConfigurableBrowse_div_browse-navigation {
+/*	display: none;  */
+}
+#aspect_artifactbrowser_ConfigurableBrowse_field_sort_by + #aspect_artifactbrowser_ConfigurableBrowse_field_order + #aspect_artifactbrowser_ConfigurableBrowse_field_rpp + #aspect_artifactbrowser_ConfigurableBrowse_field_update {
+	margin-top: 1em;
+}
+
+/* This breaks the layout in IE 8 and 9 :(
+label[for="aspect_eperson_PasswordLogin_field_submit"] {
+	display: none;
+}
+*/
+
+
+/* Image Carousel
+========================================================================== */
+
+#front-images a:hover {
+	text-decoration: none;
+}
+#front-images a,
+#front-images a + a + a + a {
+	display: inline-block;
+	margin: 0 15px 15px 0;
+}
+#front-images a + a + a,
+#front-images a + a + a + a + a + a {
+	margin-right: 0;
+}
+#front-images-buttons {
+	text-align: center;
+}
+#front-images-buttons input {
+	width: 30px;
+	margin-right: 10px;
+}
+#front-images {
+	height: 470px;
+	overflow: hidden;
+}
+#front-images button {
+	background: none;
+	border: 1px solid transparent;
+	color: #999;
+	display: none;
+	font-weight: normal;
+	font-size: 1.66667em;
+	padding: 0 15px .2em;
+	/*padding: 13% 0;*/
+	/*margin: 13% 0;*/
+}
+#front-images button:hover,
+#front-images button:active {
+	background: url(snow.png);
+	border: 1px solid;
+	color: #039;
+}
+#rotate-left {
+	float: left;
+}
+#rotate-right {
+	float: right;
+}
