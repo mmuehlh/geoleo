@@ -23,7 +23,17 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	color: #6C564C;
 	line-height: 1;
-	/* font-weight: normal; */
+}
+img {
+	border: 0;
+}
+hr {
+	display: block;
+	height: 1px;
+	border:0;
+	border-top: 1px solid #D4D4D4;
+	margin: 1em 0;
+	padding: 0;
 }
 div + h1 {
 	margin-top: 2em;
@@ -68,13 +78,19 @@ input[type=reset] {
 	text-decoration: none;
 	text-shadow: 0 1px rgba(255, 255, 255, 0.75);
 	text-transform: uppercase;
-	background: url(button_shade_large.png) repeat-x 0 0;
+	background: url(http://www.geo-leo.de/typo3conf/ext/pazpar2/Resources/Public/pz2-client/button_shade_large.png) repeat-x 0 0;
 	vertical-align: bottom;
+}
+button:active,
+input[type=submit]:active,
+input[type=reset]:active {
+	background-image: url(http://www.geo-leo.de/typo3conf/ext/pazpar2/Resources/Public/pz2-client/button_shade_large_click.png);
 }
 p + fieldset {
 	margin-top: 1em;
 }
 ul {
+	list-style:none;
 	margin: 0;
 	padding: 0;
 }
@@ -106,6 +122,9 @@ ul + p,
 table + div,
 ul + div {
 	margin-top: 1em;
+}
+fieldset {
+	border: 0;
 }
 fieldset ol {
 	list-style-type: none;
@@ -150,13 +169,22 @@ input.error {
 	width: 960px;
 	margin: 0 auto;
 }
+#head h1 {
+	background: url(geo-leo_e-docs_logo.png) center top no-repeat;
+	height: 170px;
+	left: -5px;
+}
+#ds-header-logo-link {
+	display: block;
+	height: 150px;
+}
 #content {
 	margin: 0;
 	overflow: visible;
 	padding-bottom: 60px;
 }
 #ds-main {
-	background: url(header_repeat.png) center top repeat-x;
+	background: url(http://www.geo-leo.de/fileadmin/geoleo/header_repeat.png) center top repeat-x;
 	overflow: hidden;
 }
 #ds-content {
@@ -179,13 +207,8 @@ input.error {
 #ds-body form p + p {
 	margin-top: .5em;
 }
-#ds-header-logo-link {
-	display: block;
-	margin-left: 12px;
-	background: url(geo-leo_e-docs_logo.png) center top no-repeat;
-	height: 170px;
-	width: 240px;
-	text-indent: -9999px;
+#ds-body form + form {
+	margin-top: 20px;
 }
 
 
@@ -357,7 +380,7 @@ li .thumbnail-wrapper + .artifact-description {
 	display: inline-block !important;
 	width: 1em;
 	text-indent: -9999px;
-	background: url(arrow_single_right.png) center center no-repeat;
+	background: url(http://www.geo-leo.de/fileadmin/geoleo/arrow_single_right.png) center center no-repeat;
 }
 *:first-child+html .arrow,
 *:first-child+html .ds-trail-arrow { /* IE 7 fix */
@@ -424,15 +447,8 @@ p.subtitle { /* like h2 */
 ========================================================================== */
 
 #ds-options-wrapper {
-	/*background: url(snow.png) repeat-y 0 0;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;*/
 	padding: 30px 15px;
 	width: 200px;
-	/* Layout broken when using anchors
-	margin-bottom: -9979px !important;
-	padding-bottom: 9999px !important;
-	*/
 }
 #ds-options-wrapper label {
 	width: 200px;
@@ -773,4 +789,128 @@ label[for="aspect_eperson_PasswordLogin_field_submit"] {
 }
 #rotate-right {
 	float: right;
+}
+
+/* MM Addons
+========================================================================== */
+
+file_home_div_home h2 {
+        width: 700px;
+}
+
+img#tu-freiberg {
+        width: 100px;
+        padding: 0 25px
+}
+
+img#geozon {
+        80px;
+}
+
+#file_about-us div.ds-static-div {
+        padding: 0 0 0.5em 0;
+}
+
+#file-static ul.ds-bulleted-list {
+        list-style-type: decimal;
+}
+
+#file_static ul#toc1, #file_static ul#toc2 {
+        list-style-type: none;
+	padding-left: 0;
+}
+
+#file_static ul#questions {
+	list-style-type: square;
+	margin-left: 1em;
+}
+
+
+ul#about_list, #file_static ul.ds-simple-list {
+        list-style-type: circle;
+        padding: 0.3em 0 0 1em;
+}
+
+
+#file_deposit-licence_pdf {
+        float:right;
+        margin-top: -3em;
+}
+
+#file_deposit-license p {
+	margin-bottom: 0.5em;
+}
+
+#file_deposit-license .ds-div-head {
+        width: 700px;
+        font-size: 1.3em;
+}
+
+
+#licence {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #003399;
+    padding: 0;
+}
+
+
+.ds-interpreted-field {
+color: #006400;
+font-weight: bolder;
+}
+
+#file_impressum h3 {
+font-weight: normal;
+margin-bottom: 0.3em;
+}
+
+
+#user {
+        font-weight: bolder;
+}
+
+#aspect_eperson_EditProfile_list_memberships, #aspect_eperson_EditProfile_div_information h2 {
+        display: none;
+}
+
+#file_static h2 {
+	width: 100%;
+}
+
+.indent, #file_static h3, #file_static .ds-simple-list li {
+	font-weight: normal;
+/*	padding-left: .5em;*/
+}
+
+
+.italic {
+	font-style: italic;
+	color: #6C564C;
+}
+
+.bold {
+	font-weight: bolder;
+}
+#search1 p, #search2 p, #search3 p, #file_static h3, #submit1 p, #submit2 p, #submit3 p, #submit4 p, #submit5 p {
+	font-weight: normal;
+	padding-left: .5em;
+}
+
+#search-list {
+	margin-left: 1em; 
+}
+
+#file_static div p {
+	margin-bottom: 0.5em;
+}
+
+#file_static ul.ds-simple-list {
+	margin-top: -0.5em;
+}
+
+#aspect_discovery_SimpleSearch_list_search-query .ds-checkbox-field label 
+{
+	color: #Fe642E;
+	font-weight: bolder;
+	margin-right: 3px;
 }

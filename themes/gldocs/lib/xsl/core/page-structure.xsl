@@ -112,7 +112,7 @@
 			<!-- Javascript at the bottom for fast page loading -->
 			<xsl:call-template name="addJavascript"/>
 			<!-- Piwik -->
-			<script type="text/javascript" src="http://piwik.gwdg.de/piwik.js"></script>
+			<!--<script type="text/javascript" src="http://piwik.gwdg.de/piwik.js"></script>
 			<script type="text/javascript">
 			/* <![CDATA[ */
 			try {
@@ -121,10 +121,10 @@
 			piwikTracker.trackPageView();
 			} catch(err) {}
 
-			/* ]]> */
+			/* ]]> */ -->
 
 </script>
-<noscript><p><img src="http://piwik.gwdg.de/piwik.php?idsite=123" style="border:0" alt=""/></p></noscript>
+<!-- <noscript><p><img src="http://piwik.gwdg.de/piwik.php?idsite=123" style="border:0" alt=""/></p></noscript> -->
 <!-- /Piwik -->
 			<xsl:text disable-output-escaping="yes">&lt;/body&gt;</xsl:text>
 		</html>
@@ -174,7 +174,18 @@
 				</xsl:if>
 			  </xsl:attribute>
 			</meta>
-			<!-- Add stylsheets -->
+			
+			<!-- Add base stylesheet from GEO-LEO main site -->
+			<link rel="stylesheet" type="text/css">
+				<xsl:attribute name="media">
+					<xsl:text>all</xsl:text>
+				</xsl:attribute>
+				<xsl:attribute name="href">
+					<xsl:text>http://www.geo-leo.de/fileadmin/geoleo/geoleo.css?1334672543</xsl:text>
+				</xsl:attribute>
+			</link>
+			
+			<!-- Add other stylesheets -->
 			<xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='stylesheet']">
 				<link rel="stylesheet" type="text/css">
 					<xsl:attribute name="media">
@@ -335,7 +346,7 @@
 						<xsl:text>/</xsl:text>
 					</xsl:attribute>
 					<xsl:choose>
-						<!-- protectiotion against an empty page title -->
+						<!-- protection against an empty page title -->
 						<xsl:when test="not(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title'])">
 							<xsl:text>GEO-LEO e-docs</xsl:text>
 						</xsl:when>
